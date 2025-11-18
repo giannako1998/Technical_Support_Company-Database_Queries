@@ -1,8 +1,8 @@
 -- Δεδομένα Πελατών (Customers)
 INSERT INTO Customers (first_name, last_name, company_name, email, phone_number) VALUES
-('Nikolaos', 'Pappas', 'RetailPro AE', 'nikos.pappas@rp.gr', '2101234567'),
-('Maria', 'Georgiou', 'ElectroTech', 'maria.geo@et.com', '2109876543'),
-('Dimitrios', 'Athanasiou', 'SmallMarket O.E.', 'd.ath@sm.gr', '6940112233');
+('Nikolaos', 'Pappas', 'RetailPro AE', 'nikos.pappas@gmail.com', '2101234567'),
+('Maria', 'Georgiou', 'ElectroTech', 'maria.geo@gmail.com', '2109876543'),
+('Dimitrios', 'Athanasiou', 'SmallMarket O.E.', 'd.ath@gmail.gr', '6940112233');
 
 -- Δεδομένα Προϊόντων (Products)
 INSERT INTO Products (product_name, version, description) VALUES
@@ -12,8 +12,8 @@ INSERT INTO Products (product_name, version, description) VALUES
 
 -- Δεδομένα Agents (Τεχνικοί Υποστήριξης) - Εσύ είσαι ο 1
 INSERT INTO Agents (first_name, last_name, email) VALUES
-('George', 'Giannakopoulos', 'george@entersoftone.com'),
-('Eleni', 'Konstantinou', 'eleni@entersoftone.com');
+('George', 'Giannakopoulos', 'george@gmail.com'),
+('Eleni', 'Konstantinou', 'eleni@gmail.com');
 
 -- Δεδομένα Αιτημάτων Υποστήριξης (Support_Tickets)
 INSERT INTO Support_Tickets (customer_id, agent_id, product_id, subject, status, priority, date_created) VALUES
