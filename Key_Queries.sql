@@ -1,4 +1,4 @@
--- Query 1: Εύρεση όλων των ανοιχτών (Open) ή σε εξέλιξη (In Progress) αιτημάτων, ταξινομημένων κατά υψηλή προτεραιότητα (High/Urgent), ώστε να γνωρίζεις με τι πρέπει να ασχοληθείς άμεσα.
+Query 1: Find all open or in progress requests, sorted by high priority (High/Urgent), so you know what you need to deal with immediately.
 
 SELECT
     T.ticket_id,
@@ -27,7 +27,7 @@ ORDER BY
  
  
 
--- Query 2: Τα 5 πιο προβληματικά προϊόντα (βάσει ανοιχτών Tickets)
+Query 2: The 5 most problematic products (based on open Tickets).
 SELECT
     P.product_name,
     COUNT(T.ticket_id) AS Open_Tickets_Count
@@ -44,7 +44,7 @@ ORDER BY
 LIMIT 5;
 
 
--- Query 3: Συνολικός αριθμός επιλυμένων Tickets ανά Technical Agent
+Query 3: Total number of resolved Tickets per Technical Agent.
 SELECT
     CONCAT(A.first_name, ' ', A.last_name) AS Agent_Name,
     COUNT(T.ticket_id) AS Closed_Tickets_Count
@@ -60,7 +60,7 @@ ORDER BY
     Closed_Tickets_Count DESC;
 
 
--- Query 4: Διαχείριση Κατάστασης: Εντολή UPDATE για την αλλαγή της κατάστασης ενός Ticket σε 'Closed' μετά την επίλυση.
+Query 4: Status Management: UPDATE command to change the status of a Ticket to 'Closed' after resolution.
 
 UPDATE Support_Tickets
 SET
@@ -73,7 +73,7 @@ WHERE
 SELECT ticket_id, subject, status, priority FROM Support_Tickets WHERE ticket_id = 4;
 
 
--- Query 5: Εύρεση των 3 πελατών με τον μεγαλύτερο συνολικό όγκο Tickets
+Query 5: Find the 3 customers with the highest total volume of Tickets.
 
 SELECT
     C.company_name AS Customer_Company,
@@ -89,7 +89,7 @@ ORDER BY
 LIMIT 3;
 
 
--- Query 6: Υπολογισμός του μέσου χρόνου επίλυσης (σε ημέρες) για τα κλειστά Tickets
+Query 6: Calculate the average resolution time (in days) for closed Tickets.
 SELECT
     AVG(DATEDIFF(NOW(), T.date_created)) AS Avg_Resolution_Days
 FROM
