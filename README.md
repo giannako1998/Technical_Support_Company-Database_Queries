@@ -1,37 +1,34 @@
-🛠️Technical Support Company
+---TECHNICAL SUPPORT COMPANY--
 
 
-Αυτό το αποθετήριο περιέχει το SQL σχήμα και τις αναλυτικές queries για ένα απλοποιημένο **Σύστημα Διαχείρισης Αιτημάτων Τεχνικής Υποστήριξης .
-
-Ο σκοπός αυτού του project είναι να επιδείξει την κατανόηση:
-
-*Της δομής βάσεων Δεδομένων (Schema Design),
-*Της διαχείρισης και ανάλυσης δεδομένων (Data Manipulation) για την υποστήριξη επιχειρηματικών αποφάσεων (Prioritization).
+This repository contains the SQL schema and analytical queries for a Technical Support Request Management System.
 
 
-🛠️Δομή Βάσης Δεδομένων (Schema)
+Database Structure
 
-Το σχήμα αποτελείται από 4 βασικούς πίνακες, οι οποίοι διασυνδέονται μέσω Foreign Keys: 
-  *Customers : Πληροφορίες Πελατών. 
-  *Products : Οι λύσεις λογισμικού (π.χ., POS, ERP). 
-  *Agents : Οι Τεχνικοί Υποστήριξης.
-  *Support_Tickets : Καταγραφή όλων των αιτημάτων (με στήλες Status και Priority).
+The schema consists of 4 main tables, which are connected via Foreign Keys: 
+*Customers : Customer Information. 
+*Products : Software solutions (e.g., POS, ERP). 
+*Agents : Support Technicians.
+*Support_Tickets : Recording of all requests (with Status and Priority columns).
 
-Το script δημιουργίας είναι το Schema_Creation.sql
+The creation script is Schema_Creation.sql
 
 
 
-🛠️ Βασικές Queries & Ανάλυση (Key Queries)
+Key Queries & Analysis
 
-Το αρχείο Key_Queries.sql περιέχει στοχευμένα ερωτήματα που αναπαριστούν καθημερινές εργασίες ενός Technical Support Consultant.
+The Key_Queries.sql file contains queries for the daily tasks of a Technical Support Consultant.
 
-*Query 1* Ιεράρχηση: Εξαγωγή όλων των ανοιχτών (Open) ή σε εξέλιξη (In Progress) Tickets με Υψηλή/Επείγουσα (High/Urgent) Προτεραιότητα. 
 
-*Query 2* Αναφορά Προβλημάτων: Εύρεση των 5 προϊόντων που έχουν τα περισσότερα ανοιχτά αιτήματα.
+*Query 1* Extract all Open or In Progress Tickets with High/Urgent Priority. 
 
-*Query 3* Απόδοση: Υπολογισμός του συνολικού αριθμού επιλυμένων (Closed) Tickets ανά Agent.
+*Query 2* Find the 5 products with the most open requests.
 
-*Query 4* Διαχείριση Κατάστασης: Εντολή UPDATE για την αλλαγή της κατάστασης ενός Ticket σε 'Closed' μετά την επίλυση.
+*Query 3* Calculation of the total number of resolved (Closed) Tickets per Agent.
 
-*Query 5* Ανάλυση Πελατών:** Εύρεση των 3 πελατών με τον μεγαλύτερο συνολικό όγκο Tickets. 
-*Query 6* Μέτρηση KPI: Υπολογισμός του μέσου χρόνου επίλυσης (σε ημέρες) για τα κλειστά Tickets.
+*Query 4* UPDATE statement to change the status of a Ticket to 'Closed' after resolution.
+
+*Query 5* Find the 3 customers with the highest total volume of Tickets. 
+
+*Query 6* Calculate the average resolution time (in days) for closed Tickets.
