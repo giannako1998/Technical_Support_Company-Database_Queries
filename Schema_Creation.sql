@@ -2,8 +2,8 @@ CREATE DATABASE `Technical Support Company`;
 
 USE `Technical Support Company`;
 
--- 1. Πίνακας: Customers (Πελάτες)
--- Περιέχει βασικές πληροφορίες για τους πελάτες της εταιρείας.
+-- 1. Table: Customers (Customers) --
+-- Contains basic information about the company's customers.
 CREATE TABLE Customers (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -13,8 +13,8 @@ CREATE TABLE Customers (
     phone_number VARCHAR(20)
 );
 
--- 2. Πίνακας: Products (Προϊόντα/Λύσεις)
--- Αναπαριστά τα προϊόντα λογισμικού (π.χ., Retail Solution, ERP) που υποστηρίζονται.
+-- 2. Table: Products --
+-- Represents the software products (e.g., Retail Solution, ERP) that are supported.
 CREATE TABLE Products (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100) NOT NULL,
@@ -22,8 +22,8 @@ CREATE TABLE Products (
     description TEXT
 );
 
--- 3. Πίνακας: Agents (Τεχνικοί Υποστήριξης)
--- Οι χρήστες (εσύ και οι συνάδελφοί σου) που επιλύουν τα αιτήματα.
+-- 3. Table: Agents --
+-- The users who resolve requests.
 CREATE TABLE Agents (
     agent_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -31,8 +31,9 @@ CREATE TABLE Agents (
     email VARCHAR(100) UNIQUE NOT NULL
 );
 
--- 4. Πίνακας: Support_Tickets (Αιτήματα Υποστήριξης)
--- Ο κεντρικός πίνακας που καταγράφει όλα τα θέματα.
+
+-- 4. Table: Support_Tickets --
+-- The central table that records all issues.
 CREATE TABLE Support_Tickets (
     ticket_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE Support_Tickets (
     status VARCHAR(20) NOT NULL, -- Τιμές: 'Open', 'In Progress', 'Closed', 'Pending'
     priority VARCHAR(20) NOT NULL, -- Τιμές: 'Low', 'Medium', 'High', 'Urgent'
 
-    -- Ορισμός των συνδέσεων (Foreign Keys)
+-- Foreign Keys --
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
     FOREIGN KEY (agent_id) REFERENCES Agents(agent_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
