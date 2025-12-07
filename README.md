@@ -7,9 +7,13 @@ This repository contains the SQL schema and analytical queries for a Technical S
 Database Structure
 
 The schema consists of 4 main tables, which are connected via Foreign Keys: 
+
 *Customers : Customer Information. 
+
 *Products : Software solutions (e.g., POS, ERP). 
+
 *Agents : Support Technicians.
+
 *Support_Tickets : Recording of all requests (with Status and Priority columns).
 
 The creation script is Schema_Creation.sql
