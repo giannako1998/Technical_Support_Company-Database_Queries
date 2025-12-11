@@ -1,38 +1,36 @@
----TECHNICAL SUPPORT COMPANY--
 
+# 🛠️ Technical Support Request Management System
 
-This repository contains the SQL schema and analytical queries for a Technical Support Request Management System.
+![SQL](https://img.shields.io/badge/Language-SQL-blue?style=for-the-badge&logo=mysql)
+![Focus](https://img.shields.io/badge/Focus-Data%20Analysis-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
+## 📌 Project Overview
+This repository contains the SQL schema and analytical queries for a **Technical Support Request Management System**. It simulates a real-world scenario of tracking tickets, agent performance, and product issues.
 
-Database Structure
+## 🗂️ Database Structure
+The schema consists of 4 main tables connected via **Foreign Keys**:
 
-The schema consists of 4 main tables, which are connected via Foreign Keys: 
+* **👥 Customers:** Stores customer information.
+* **📦 Products:** Software solutions (e.g., POS, ERP).
+* **👨‍💻 Agents:** Support Technicians details.
+* **🎫 Support_Tickets:** The core table recording all requests (includes Status, Priority, Dates).
 
-*Customers : Customer Information. 
+> *The creation script can be found in `Schema_Creation.sql`.*
 
-*Products : Software solutions (e.g., POS, ERP). 
+## 🔎 Key Queries & Analysis
+The `Key_Queries.sql` file contains queries designed to answer daily business questions for a Technical Support Consultant.
 
-*Agents : Support Technicians.
+| Query ID | Business Question / Task |
+| :--- | :--- |
+| **Query 1** | Extract all **Open** or **In Progress** Tickets with **High/Urgent** Priority. |
+| **Query 2** | Identify the **Top 5 products** with the most open requests (Pain points). |
+| **Query 3** | Calculate the total number of resolved (Closed) Tickets **per Agent** (Performance Metric). |
+| **Query 4** | **UPDATE** statement to change a Ticket's status to 'Closed' after resolution. |
+| **Query 5** | Find the **Top 3 Customers** with the highest volume of tickets. |
+| **Query 6** | Calculate the **Average Resolution Time** (in days) for closed tickets. |
 
-*Support_Tickets : Recording of all requests (with Status and Priority columns).
-
-The creation script is Schema_Creation.sql
-
-
-
-Key Queries & Analysis
-
-The Key_Queries.sql file contains queries for the daily tasks of a Technical Support Consultant.
-
-
-*Query 1* Extract all Open or In Progress Tickets with High/Urgent Priority. 
-
-*Query 2* Find the 5 products with the most open requests.
-
-*Query 3* Calculation of the total number of resolved (Closed) Tickets per Agent.
-
-*Query 4* UPDATE statement to change the status of a Ticket to 'Closed' after resolution.
-
-*Query 5* Find the 3 customers with the highest total volume of Tickets. 
-
-*Query 6* Calculate the average resolution time (in days) for closed Tickets.
+## 🚀 How to Use
+1.  Run `Schema_Creation.sql` to set up the database tables.
+2.  Run `Data Insertion Samples.sql` to populate tables with dummy data.
+3.  Execute `Key_Queries.sql` to view the analysis
