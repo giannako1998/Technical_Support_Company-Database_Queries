@@ -15,8 +15,9 @@ JOIN
 JOIN
     Products P ON T.product_id = P.product_id
 WHERE
-    T.status IN ('Open', 'In Progress')  -- Ενεργά Tickets
-    AND T.priority IN ('Urgent', 'High') -- Υψηλή Προτεραιότητα
+    T.status IN ('Open', 'In Progress')  -- Active Tickets
+    AND T.priority IN ('Urgent', 'High') -- High Priority
+
 ORDER BY
     CASE
         WHEN T.priority = 'Urgent' THEN 1
