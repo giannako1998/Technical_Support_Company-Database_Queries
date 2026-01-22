@@ -69,7 +69,7 @@ SET
 WHERE
     ticket_id = 4;
 
--- Έλεγχος ότι η ενημέρωση πέτυχε:
+-- Check that the update was successful:
 SELECT ticket_id, subject, status, priority FROM Support_Tickets WHERE ticket_id = 4;
 
 
