@@ -66,7 +66,7 @@ Query 4: Status Management: UPDATE command to change the status of a Ticket to '
 UPDATE Support_Tickets
 SET
     status = 'Closed',
-    agent_id = 1 -- Ο George το έκλεισε
+    agent_id = 1 
 WHERE
     ticket_id = 4;
 
