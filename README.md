@@ -18,22 +18,22 @@ The system follows a normalized schema to ensure data integrity.
 
 > *The creation script can be found in `Schema_Creation.sql`.*
 
-🔎 Analytical Business Logic (SQL Case Studies)
-The Key_Queries.sql file addresses critical operational challenges using advanced SQL techniques:
+## 🔎 Analytical Business Logic (SQL Case Studies)
+The `Key_Queries.sql` file addresses critical operational challenges using advanced SQL techniques:
 
-Focus Area	Business Insight / Task	Technical Implementation			
-SLA & Efficiency	Calculated Average Resolution Time to monitor department performance.	AVG() with DATEDIFF() functions			
-Product Health	Identified "Top 5 Products" with the most open requests to pinpoint recurring defects.	GROUP BY & ORDER BY aggregations			
-Urgency Management	Filtered all High/Urgent priority tickets that remain Open or In Progress.	Complex WHERE clauses with logical operators			
-Agent Performance	Measured individual efficiency by counting total resolved tickets per technician.	COUNT() & JOIN operations			
-Customer Retention	Detected high-volume ticket generators for proactive account management.	LIMIT & COUNT() analysis			
-Data Integrity	Executed status transitions (e.g., from Open to Closed) after resolution.	UPDATE statements for workflow automation			
+| Focus Area | Business Insight / Task | Technical Implementation |
+| :--- | :--- | :--- |
+| **SLA & Efficiency** | Calculated **Average Resolution Time** to monitor department performance. | `AVG()` with `DATEDIFF()` functions |
+| **Product Health** | Identified "Top 5 Products" with the most open requests to pinpoint **recurring defects**. | `GROUP BY` & `ORDER BY` aggregations |
+| **Urgency Management** | Filtered all High/Urgent priority tickets that remain Open or In Progress. | Complex `WHERE` clauses with logical operators |
+| **Agent Performance** | Measured individual efficiency by counting total resolved tickets per technician. | `COUNT()` & `JOIN` operations |
+| **Customer Retention** | Detected high-volume ticket generators for proactive account management. | `LIMIT` & `COUNT()` analysis |
+| **Data Integrity** | Executed status transitions (e.g., from Open to Closed) after resolution. | `UPDATE` statements for workflow automation |
 
-🛠️ Tech Stack
-
-Language: SQL (MySQL)
-Development Tools: GitHub
-Design: Relational Database Modeling
+## 🛠️ Tech Stack
+* **Language:** SQL (MySQL)
+* **Tools:** VS Code | Git/GitHub
+* **Design:** Relational Database Modeling
 
 ## 🚀 How to Use
 1.  Run `Schema_Creation.sql` to set up the database tables.
