@@ -6,29 +6,34 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
 ## 📌 Project Overview
-This repository contains the SQL schema and analytical queries for a **Technical Support Request Management System**. It simulates a real-world scenario of tracking tickets, agent performance, and product issues.
+This project involves the design and implementation of a robust relational database system tailored for a Technical Support Department. Inspired by real-world fintech operations (e.g., Viva Wallet), it simulates a production environment for tracking ticket lifecycles, monitoring agent performance, and identifying recurring product defects through data-driven insights.
 
-## 🗂️ Database Structure
-The schema consists of 4 main tables connected via **Foreign Keys**:
+## 🗄️ Database Architecture
+The system follows a normalized schema to ensure data integrity.
 
 * **👥 Customers:** Stores customer information.
 * **📦 Products:** Software solutions (e.g., POS, ERP).
-* **👨‍💻 Agents:** Support Technicians details.
+* **👨‍💻 Agents:** Technical support staff profiles and performance tracking.
 * **🎫 Support_Tickets:** The core table recording all requests (includes Status, Priority, Dates).
 
 > *The creation script can be found in `Schema_Creation.sql`.*
 
-## 🔎 Key Queries & Analysis
-The `Key_Queries.sql` file contains queries designed to answer daily business questions for a Technical Support Consultant.
+🔎 Analytical Business Logic (SQL Case Studies)
+The Key_Queries.sql file addresses critical operational challenges using advanced SQL techniques:
 
-| Query ID | Business Question / Task |
-| :--- | :--- |
-| **Query 1** | Extract all **Open** or **In Progress** Tickets with **High/Urgent** Priority. |
-| **Query 2** | Identify the **Top 5 products** with the most open requests (Pain points). |
-| **Query 3** | Calculate the total number of resolved (Closed) Tickets **per Agent** (Performance Metric). |
-| **Query 4** | **UPDATE** statement to change a Ticket's status to 'Closed' after resolution. |
-| **Query 5** | Find the **Top 3 Customers** with the highest volume of tickets. |
-| **Query 6** | Calculate the **Average Resolution Time** (in days) for closed tickets. |
+Focus Area	Business Insight / Task	Technical Implementation			
+SLA & Efficiency	Calculated Average Resolution Time to monitor department performance.	AVG() with DATEDIFF() functions			
+Product Health	Identified "Top 5 Products" with the most open requests to pinpoint recurring defects.	GROUP BY & ORDER BY aggregations			
+Urgency Management	Filtered all High/Urgent priority tickets that remain Open or In Progress.	Complex WHERE clauses with logical operators			
+Agent Performance	Measured individual efficiency by counting total resolved tickets per technician.	COUNT() & JOIN operations			
+Customer Retention	Detected high-volume ticket generators for proactive account management.	LIMIT & COUNT() analysis			
+Data Integrity	Executed status transitions (e.g., from Open to Closed) after resolution.	UPDATE statements for workflow automation			
+
+🛠️ Tech Stack
+
+Language: SQL (MySQL)
+Development Tools: GitHub
+Design: Relational Database Modeling
 
 ## 🚀 How to Use
 1.  Run `Schema_Creation.sql` to set up the database tables.
